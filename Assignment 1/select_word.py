@@ -24,6 +24,10 @@ def main():
     for i in range(3, 6):
         n_letter.append(read_lines("words_alpha.txt", i, 100))
     
+    # clear content in text file
+    f = open("300_words.txt", 'r+')
+    f.truncate()
+
     for item in n_letter:
         write_lines("300_words.txt", item)
 
