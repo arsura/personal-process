@@ -31,7 +31,5 @@ def main():
     for item in n_letter:
         write_lines("300_words.txt", item)
 
-
-
 if __name__ == "__main__":
     main()
