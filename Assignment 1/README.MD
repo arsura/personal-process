@@ -5,4 +5,4 @@
 3. เลือกภาษาและเครื่องมือ (language and tools)
 4. ลงมือเขียนโปรแกรมพร้อมเทสตัวโปรแกรมระหว่างเขียน (unit test)
 
-**Word list from https://github.com/dwyl/english-words**
+Word lists from https://github.com/dwyl/english-words
