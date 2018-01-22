@@ -4,8 +4,7 @@
 #       for character in line
 #           if character >= 65 and character <= 90      // A - Z (Upper Case)
 #               character = character + 32              // Convert to a - z (Lower Case) 
-#           alphabet_list[character - 97] += 1             
-#
+#           alphabet_list[character - 97] += 1 
 
 
 def read_and_count_single(filename):
@@ -18,11 +17,9 @@ def read_and_count_single(filename):
     with open(filename, 'r') as infile:
         for line in infile:
             line.lower()
-            #print(line)
             for character in line:
                 if character >= 'a' and character <= 'z':
                     single_alphabet[ord(character) - 97] += 1
-                    #print(ord(character))
     return single_alphabet
 
 
@@ -37,11 +34,9 @@ def read_and_count_double(filename):
     with open(filename, 'r') as infile:
         for line in infile:
             line.lower()
-            #print(line)
             for i in range(0, (len(line) - 2)):
                 if line[i] >= 'a' and line[i] <= 'z':
                     double_alphabet[ord(line[i]) - 97][ord(line[i + 1]) - 97] += 1
-                    #print(ord(line[i]) - 97, "\t", ord(line[i + 1]) - 97)
     return double_alphabet
 
 
