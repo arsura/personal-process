@@ -6,7 +6,6 @@
 #               character = character + 32              // Convert to a - z (Lower Case) 
 #           alphabet_list[character - 97] += 1 
 
-
 def read_and_count_single(filename):
     single_alphabet = []
 
@@ -39,13 +38,27 @@ def read_and_count_double(filename):
                     double_alphabet[ord(line[i]) - 97][ord(line[i + 1]) - 97] += 1
     return double_alphabet
 
+def write_lines(filename, word):
+    outfile = open(filename, 'a')
+    outfile.write("".join(word))
+    outfile.close()
+
+def clear_content(filename):
+    f = open(filename, 'w+')
+    f.truncate()
+    f.close()
 
 def main():
+    # clear text in letter_freq.txt
+    clear_content("letter_freq.txt")
+
     single_alphabet = read_and_count_single("300_words.txt")
     # print freq of single alphabet
     i = 0
     for char in range(ord('a'), ord('z') + 1):
-        print(chr(char), " ", single_alphabet[i])
+        printout = chr(char) + " " + str(single_alphabet[i]) + "\n"
+        #print(printout)
+        write_lines("letter_freq.txt", printout)
         i += 1
 
     double_alphabet = read_and_count_double("300_words.txt")
@@ -55,11 +68,11 @@ def main():
     for first in range(ord('a'), ord('z') + 1):
         j = 0
         for sec in range(ord('a'), ord('z') + 1):
-            print(chr(first) + chr(sec), " ", double_alphabet[i][j])
+            printout = chr(first) + chr(sec) + " " + str(double_alphabet[i][j]) + "\n"
+            #print(printout)
+            write_lines("letter_freq.txt", printout)
             j += 1 
         i += 1
     
-    
-
 if __name__ == "__main__":
     main()
