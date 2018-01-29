@@ -23,9 +23,9 @@ def write_lines(filename, word):
 def main():
     n_letter = []
 
-    # n + 1 include '\n'
+    # 3 + 1 ; 3 is word len, 1 is '\n'
     for i in range(3 + 1, 6 + 1):
-        n_letter.append(read_lines("words_alpha.txt", i, 100))
+        n_letter.append(read_lines("words_alpha_rand.txt", i, 100))
     
     # clear content in text file
     f = open("300_words.txt", 'w+')
