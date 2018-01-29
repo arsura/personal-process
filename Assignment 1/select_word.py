@@ -21,8 +21,10 @@ def write_lines(filename, word):
 
 
 def main():
-    n_letter = [] 
-    for i in range(3, 6):
+    n_letter = []
+
+    # n + 1 include '\n'
+    for i in range(3 + 1, 6 + 1):
         n_letter.append(read_lines("words_alpha.txt", i, 100))
     
     # clear content in text file
