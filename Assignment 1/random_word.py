@@ -1,4 +1,5 @@
 import random
+from read_write import *
 
 def read_lines(filename):
     lines = []
@@ -6,16 +7,6 @@ def read_lines(filename):
         for line in infile:
             lines.append(line)
     return lines
-
-def write_lines(filename, word):
-    outfile = open(filename, 'a')
-    outfile.write("".join(word))
-    outfile.close()
-
-def clear_content(filename):
-    f = open(filename, 'w+')
-    f.truncate()
-    f.close()
 
 def random_lines():
     rand_line = []
@@ -31,7 +22,6 @@ def random_lines():
     #print(current_word, rand_int)
     clear_content('words_alpha_rand.txt')
     write_lines('words_alpha_rand.txt', rand_line)
-
 
 
 def main():

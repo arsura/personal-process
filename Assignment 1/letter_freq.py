@@ -1,3 +1,4 @@
+from read_write import *
 # alphabet_list = []                                    // [0] = a, [25] = z
 # while read 300 word lists file
 #   for line in 300 word lists
@@ -37,16 +38,6 @@ def read_and_count_double(filename):
                 if line[i] >= 'a' and line[i] <= 'z':
                     double_alphabet[ord(line[i]) - 97][ord(line[i + 1]) - 97] += 1
     return double_alphabet
-
-def write_lines(filename, word):
-    outfile = open(filename, 'a')
-    outfile.write("".join(word))
-    outfile.close()
-
-def clear_content(filename):
-    f = open(filename, 'w+')
-    f.truncate()
-    f.close()
 
 def main():
     # clear text in letter_freq.txt

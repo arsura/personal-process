@@ -1,3 +1,4 @@
+from read_write import *
 # word list from https://github.com/dwyl/english-words
 
 # while read word list file
@@ -13,12 +14,6 @@ def read_lines(filename, n_letter, max_word):
                 lines.append(line)
 
     return lines
-
-def write_lines(filename, word):
-    outfile = open(filename, 'a')
-    outfile.write("".join(word))
-    outfile.close()
-
 
 def main():
     n_letter = []
