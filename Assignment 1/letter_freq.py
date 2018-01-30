@@ -1,4 +1,5 @@
 from read_write import *
+
 # alphabet_list = []                                    // [0] = a, [25] = z
 # while read 300 word lists file
 #   for line in 300 word lists
