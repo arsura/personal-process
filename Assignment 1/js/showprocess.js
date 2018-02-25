@@ -3,6 +3,7 @@ window.onload = function () {
     query.once("value")
         .then(function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
+                if (childSnapshot.key == 'lines_count' || childSnapshot.key == 'funct_count') return;
                 document.getElementsByClassName('alignleft')[0].innerHTML += '<b>' + childSnapshot.key + '</b> <br><br> <b>Process</b> <br>';
                 document.getElementsByClassName('alignright')[0].innerHTML += '<br><br><b>Time(s)</b><br>';
                 var i = 1;
@@ -38,6 +39,9 @@ function update() {
     query.once("value")
         .then(function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
+                //console.log(childSnapshot.key)
+                if (childSnapshot.key == 'lines_count' || childSnapshot.key == 'funct_count') return;
+
                 var process = { "Design": 0, "Code": 0, "Test": 0, "Debug": 0 };
                 var durationList = [];
                 childSnapshot.forEach(function (childAgian) {
@@ -83,13 +87,24 @@ function varstats(durationList, rootName) {
 function percentile(durationList) {
     PT = [];
     var len = durationList.length;
-    for (var i = 0.1; i <= 0.9; i += 0.1) {
-        var P = i * (len + 1);
-        var t1 = (P - Math.floor(P));
-        var t2 = durationList[Math.floor(P)] - durationList[Math.floor(P) - 1];
-        P = durationList[Math.floor(P) - 1] + (t1 * t2);
-        P = Math.round(P * 100) / 100; // 2 digit decimal
-        PT.push(P);
+    for (var i = 10; i <= 90; i += 10) {
+        var P = (i / 100) * (len + 1);
+        if (P - Math.floor(P) == 0.0) {
+            PT.push(durationList[P - 1]);
+        }
+        else if (P < 1) { 
+            PT.push(durationList[0]);
+        }
+        else if (P > len) {
+            PT.push(durationList[len - 1]);
+        }
+        else {
+            var t1 = (P - Math.floor(P));
+            var t2 = durationList[Math.floor(P)] - durationList[Math.floor(P) - 1];
+            P = durationList[Math.floor(P) - 1] + (t1 * t2);
+            P = Math.round(P * 100) / 100; // 2 digit decimal
+            PT.push(P);
+        }
     }
     return PT;
 }
@@ -100,10 +115,22 @@ function quartile(durationList) {
 
     for (var i = 0.25; i <= 0.75; i += 0.25) {
         var Q = i * (len + 1);                        // 1.25 ; 1 is index 0
-        var t1 = (Q - Math.floor(Q));
-        var t2 = durationList[Math.floor(Q)] - durationList[Math.floor(Q) - 1];
-        Q = durationList[Math.floor(Q) - 1] + (t1 * t2);
-        QT.push(Q);
+        if (Q - Math.floor(Q) == 0) {
+            QT.push(durationList[Q - 1]);
+        }
+        else if (Q < 1) {
+            QT.push(durationList[0])
+        }
+        else if (Q > len) {
+            QT.push(durationList[len - 1]);
+        }
+        else {
+            var t1 = (Q - Math.floor(Q));
+            var t2 = durationList[Math.floor(Q)] - durationList[Math.floor(Q) - 1];
+            Q = durationList[Math.floor(Q) - 1] + (t1 * t2);
+            Q = Math.round(Q * 100) / 100;
+            QT.push(Q);
+        }
     }
     return QT;
 }
