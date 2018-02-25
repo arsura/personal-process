@@ -158,9 +158,165 @@
       "Max" : 910.768,
       "Median" : 94.608,
       "Min" : 6.007,
-      "Percentile" : [ 18.51, 22.36, 38.73, 70.3, 94.61, 159.8, 243.98, 381.86, 516.66 ],
-      "Quartile" : [ 26.936, 94.608, 325.724 ],
+      "Percentile" : [ 18.51, 22.36, 38.73, 70.3, 94.608, 159.8, 243.98, 381.86, 516.66 ],
+      "Quartile" : [ 26.94, 94.608, 325.72 ],
       "StandardDeviation" : 221.67
     }
+  },
+  "assignment-01-03" : {
+    "1517943352441" : {
+      "Comment" : "",
+      "Duration" : 390.405,
+      "Process" : "Code",
+      "StartTime" : "Wed Feb 07 2018 01:55:52 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Wed Feb 07 2018 02:02:22 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1517943749825" : {
+      "Comment" : "",
+      "Duration" : 21.186,
+      "Process" : "Test",
+      "StartTime" : "Wed Feb 07 2018 02:02:29 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Wed Feb 07 2018 02:02:51 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1517943778465" : {
+      "Comment" : "",
+      "Duration" : 58.266,
+      "Process" : "Code",
+      "StartTime" : "Wed Feb 07 2018 02:02:58 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Wed Feb 07 2018 02:03:56 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1517943843383" : {
+      "Comment" : "",
+      "Duration" : 70.209,
+      "Process" : "Test",
+      "StartTime" : "Wed Feb 07 2018 02:04:03 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Wed Feb 07 2018 02:05:13 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1518101698560" : {
+      "Comment" : "",
+      "Duration" : 103.784,
+      "Process" : "Code",
+      "StartTime" : "Thu Feb 08 2018 21:54:58 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Thu Feb 08 2018 21:56:42 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1518101810952" : {
+      "Comment" : "",
+      "Duration" : 24.576,
+      "Process" : "Test",
+      "StartTime" : "Thu Feb 08 2018 21:56:50 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Thu Feb 08 2018 21:57:15 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1518101846784" : {
+      "Comment" : "",
+      "Duration" : 1513.872,
+      "Process" : "Code",
+      "StartTime" : "Thu Feb 08 2018 21:57:26 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Thu Feb 08 2018 22:22:40 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1518103754360" : {
+      "Comment" : "",
+      "Duration" : 397.416,
+      "Process" : "Test",
+      "StartTime" : "Thu Feb 08 2018 22:29:14 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Thu Feb 08 2018 22:35:51 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519552847066" : {
+      "Comment" : "",
+      "Duration" : 137.633,
+      "Process" : "Debug",
+      "StartTime" : "Sun Feb 25 2018 17:00:47 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Sun Feb 25 2018 17:03:04 GMT+0700 (SE Asia Standard Time)"
+    },
+    "summary" : {
+      "Code" : 2066.33,
+      "Debug" : 137.63,
+      "Design" : 0,
+      "Test" : 513.39
+    },
+    "varstats" : {
+      "Average" : 301.93,
+      "Max" : 1513.872,
+      "Median" : 103.784,
+      "Min" : 21.186,
+      "Percentile" : [ 21.186, 24.576, 58.266, 70.209, 103.784, 137.633, 390.405, 397.416, 1513.872 ],
+      "Quartile" : [ 41.42, 103.784, 393.91 ],
+      "StandardDeviation" : 449.79
+    }
+  },
+  "assignment-02-01" : {
+    "1519584770372" : {
+      "Comment" : "",
+      "Duration" : 157.168,
+      "Process" : "Code",
+      "StartTime" : "Mon Feb 26 2018 01:52:50 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 01:55:27 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519584941212" : {
+      "Comment" : "",
+      "Duration" : 11.368,
+      "Process" : "Test",
+      "StartTime" : "Mon Feb 26 2018 01:55:41 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 01:55:52 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519584958011" : {
+      "Comment" : "",
+      "Duration" : 272.513,
+      "Process" : "Debug",
+      "StartTime" : "Mon Feb 26 2018 01:55:58 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 02:00:30 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519585462933" : {
+      "Comment" : "",
+      "Duration" : 137.096,
+      "Process" : "Code",
+      "StartTime" : "Mon Feb 26 2018 02:04:22 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 02:06:40 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519585608429" : {
+      "Comment" : "",
+      "Duration" : 51.952,
+      "Process" : "Test",
+      "StartTime" : "Mon Feb 26 2018 02:06:48 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 02:07:40 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519586876631" : {
+      "Comment" : "",
+      "Duration" : 43.368,
+      "Process" : "Code",
+      "StartTime" : "Mon Feb 26 2018 02:27:56 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 02:28:39 GMT+0700 (SE Asia Standard Time)"
+    },
+    "1519586937536" : {
+      "Comment" : "",
+      "Duration" : 32.8,
+      "Process" : "Test",
+      "StartTime" : "Mon Feb 26 2018 02:28:57 GMT+0700 (SE Asia Standard Time)",
+      "StopTime" : "Mon Feb 26 2018 02:29:30 GMT+0700 (SE Asia Standard Time)"
+    },
+    "summary" : {
+      "Code" : 157.17,
+      "Debug" : 272.51,
+      "Design" : 0,
+      "Test" : 11.37
+    },
+    "varstats" : {
+      "Average" : 147.02,
+      "Max" : 272.513,
+      "Median" : 157.168,
+      "Min" : 11.368,
+      "Percentile" : [ 11.368, 11.368, 40.53, 98.85, 157.168, 203.31, 249.44, 272.513, 272.513 ],
+      "Quartile" : [ 11.368, 157.168, 272.513 ],
+      "StandardDeviation" : 106.85
+    }
+  },
+  "funct_count" : {
+    "assignment-01-02" : 8,
+    "assignment-01-03" : 2,
+    "assignment-02-01" : 2
+  },
+  "lines_count" : {
+    "assignment-01-02" : 165,
+    "assignment-01-03" : 19,
+    "assignment-02-01" : 19
   }
 }
