@@ -1,5 +1,6 @@
 from firebase import firebase
 from firebase_connect import *
+from assignment_file import *
 
 def function_checker(line, comment_sym):
     string = line.strip()
@@ -17,8 +18,6 @@ def function_count(filename):
                 if function_checker(line, 'def') or function_checker(line, 'function'):
                     funct = funct + 1
     return funct
-
-file_list = {'assignment-01-02': 'js/showprocess.js', 'assignment-01-03': 'lines_count.py', 'assignment-02-01': 'function_count.py'}
 
 for item in file_list:
     count = function_count(file_list[item])

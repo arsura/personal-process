@@ -3,7 +3,9 @@ window.onload = function () {
     query.once("value")
         .then(function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
-                if (childSnapshot.key == 'lines_count' || childSnapshot.key == 'funct_count') return;
+
+                if (isAssignment(childSnapshot.key) == false) return;
+
                 document.getElementsByClassName('alignleft')[0].innerHTML += '<b>' + childSnapshot.key + '</b> <br><br> <b>Process</b> <br>';
                 document.getElementsByClassName('alignright')[0].innerHTML += '<br><br><b>Time(s)</b><br>';
                 var i = 1;
@@ -34,13 +36,23 @@ window.onload = function () {
         });
 }
 
+function isAssignment(rootname) {
+    // ES6 Substring style
+    var string = rootname;
+    var subString = 'assignment';
+    if (string.includes(subString)) {
+        return true;
+    }
+    return false;
+}
+
 function update() {
     var query = firebase.database().ref().orderByKey();
     query.once("value")
         .then(function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
                 //console.log(childSnapshot.key)
-                if (childSnapshot.key == 'lines_count' || childSnapshot.key == 'funct_count') return;
+                if (isAssignment(childSnapshot.key) == false) return;
 
                 var process = { "Design": 0, "Code": 0, "Test": 0, "Debug": 0 };
                 var durationList = [];
