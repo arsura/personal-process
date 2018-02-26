@@ -85,6 +85,21 @@ def percentile(duration_list):
             percentile_list.append(percentile_val)
     return percentile_list
 
+def avg_and_sigma(average_val, stdev_val):
+    avg_and_sigma_list = []
+    for i in range (-2, 3, 1):
+        result = average_val + ((i)*stdev_val)
+        avg_and_sigma_list.append(result)
+    return avg_and_sigma_list
+
+def log_of_avg_and_sigma(avg_and_sigma_val):
+    log_of_avg_and_sigma_list = []
+    for item in avg_and_sigma_val:
+        result = item * item
+        result = math.log(result, 10)
+        log_of_avg_and_sigma_list.append(result)
+    return log_of_avg_and_sigma_list
+
 def post_varstat_to_firebase():
     duration_list = get_duration()
     duration_list.sort()
@@ -96,6 +111,9 @@ def post_varstat_to_firebase():
     quartile_val = quartile(duration_list)
     percentile_val = percentile(duration_list)
 
+    avg_and_sigma_val = avg_and_sigma(average_val, stdev_val)
+    log_of_avg_and_sigma_val = log_of_avg_and_sigma(avg_and_sigma_val)
+
     #print(duration_list)
     #print(min_max_val)
     #print(median_val)
@@ -103,12 +121,16 @@ def post_varstat_to_firebase():
     #print(stdev_val)
     #print(quartile_val)
     #print(percentile_val)
+    #print(avg_and_sigma_val)
+    #print(log_of_avg_and_sigma_val)
 
     varstats_data = {'Duration list': duration_list, 'Min': min_max_val[0], 'Max': min_max_val[1], 
                      'Median': median_val, 'Average': average_val, 'Standard Deviation': stdev_val, 
-                     'Quartile': quartile_val, 'Percentile': percentile_val}
+                     'Quartile': quartile_val, 'Percentile': percentile_val, 'Average - nStdev': avg_and_sigma_val, 
+                     'Log10(Average - nStdev)': log_of_avg_and_sigma_val}
 
     firebase.patch(my_url + '/all_varstats', varstats_data)
+
 
 def main():
     post_varstat_to_firebase()
