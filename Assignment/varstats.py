@@ -126,8 +126,8 @@ def post_varstat_to_firebase():
 
     varstats_data = {'Duration list': duration_list, 'Min': min_max_val[0], 'Max': min_max_val[1], 
                      'Median': median_val, 'Average': average_val, 'Standard Deviation': stdev_val, 
-                     'Quartile': quartile_val, 'Percentile': percentile_val, 'Average - nStdev': avg_and_sigma_val, 
-                     'Log10(Average - nStdev)': log_of_avg_and_sigma_val}
+                     'Quartile': quartile_val, 'Percentile': percentile_val, 'Average + nStdev': avg_and_sigma_val, 
+                     'Log10(Average + nStdev)': log_of_avg_and_sigma_val}
 
     firebase.patch(my_url + '/all_varstats', varstats_data)
 
