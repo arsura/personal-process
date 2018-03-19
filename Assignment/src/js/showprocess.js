@@ -39,11 +39,12 @@ window.onload = function () {
 function isAssignment(rootname) {
     // ES6 Substring style
     var string = rootname;
-    var subString = 'assignment';
-    if (string.includes(subString)) {
-        return true;
+    if (string.includes("all_varstats") || 
+        string.includes("funct_count") || 
+        string.includes("lines_count")) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 function update() {
