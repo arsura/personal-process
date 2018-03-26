@@ -13,10 +13,11 @@ def lines_count(filename):
     with open(filename, 'r') as infile:
         for line in infile:
             if (len(line) != 1):
-                if comment_checker(line, '#') and comment_checker(line, '/'):
+                if comment_checker(line, '#') or comment_checker(line, '/'):
                     lines = lines + 1
     return lines
 
 for item in file_list:
+    #print(file_list[item])
     count = lines_count(file_list[item])
     firebase.patch(my_url + '/lines_count', {item: count})

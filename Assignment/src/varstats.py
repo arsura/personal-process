@@ -95,10 +95,21 @@ def avg_and_sigma(average_val, stdev_val):
 def log_of_avg_and_sigma(avg_and_sigma_val):
     log_of_avg_and_sigma_list = []
     for item in avg_and_sigma_val:
-        result = item * item
+        #result = item * item
+        if (item < 0):
+            result = item * (-1)
+        else:
+            result = item
         result = math.log(result, 10)
         log_of_avg_and_sigma_list.append(result)
     return log_of_avg_and_sigma_list
+
+def to_expo(log_of_avg_and_sigma_val):
+    to_expo_list = []
+    for item in log_of_avg_and_sigma_val:
+        to_expo_list.append(10**item)
+    return to_expo_list
+
 
 def post_varstat_to_firebase():
     duration_list = get_duration()
@@ -113,6 +124,7 @@ def post_varstat_to_firebase():
 
     avg_and_sigma_val = avg_and_sigma(average_val, stdev_val)
     log_of_avg_and_sigma_val = log_of_avg_and_sigma(avg_and_sigma_val)
+    to_expo_val = to_expo(log_of_avg_and_sigma_val)
 
     #print(duration_list)
     #print(min_max_val)
@@ -123,11 +135,19 @@ def post_varstat_to_firebase():
     #print(percentile_val)
     #print(avg_and_sigma_val)
     #print(log_of_avg_and_sigma_val)
+    #print(to_expo_val)
 
-    varstats_data = {'Duration list': duration_list, 'Min': min_max_val[0], 'Max': min_max_val[1], 
-                     'Median': median_val, 'Average': average_val, 'Standard Deviation': stdev_val, 
-                     'Quartile': quartile_val, 'Percentile': percentile_val, 'Average + nStdev': avg_and_sigma_val, 
-                     'Log10(Average + nStdev)': log_of_avg_and_sigma_val}
+    varstats_data = {'Duration list': duration_list, 
+                     'Min': min_max_val[0], 
+                     'Max': min_max_val[1], 
+                     'Median': median_val, 
+                     'Average': average_val, 
+                     'Standard Deviation': stdev_val, 
+                     'Quartile': quartile_val, 
+                     'Percentile': percentile_val, 
+                     'Average + nStdev': avg_and_sigma_val, 
+                     'Log10(Average + nStdev)': log_of_avg_and_sigma_val, 
+                     '10^Log10(Average + nStdev)' : to_expo_val}
 
     firebase.patch(my_url + '/all_varstats', varstats_data)
 
