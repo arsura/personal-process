@@ -4,8 +4,8 @@ file_list = {
             'assignment-02-01': 'src/function_count.py', 
             'assignment-02-02': 'src/varstats.py',
             'kmp-string-matching': 'src/kmp_string_matching.py', 
-            'Brick': 'src/1001 Brick.cpp',
-            'Roman': 'src/1002 Roman.cpp'
+            'Brick': 'src/Brick.cpp',
+            'Roman': 'src/Roman.cpp'
              }
 
 assignment_name = [
