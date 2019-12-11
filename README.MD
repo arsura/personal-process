@@ -5,4 +5,4 @@
 
   **My Process Log** <br />
   [Raw Data (json file)](https://github.com/arsura/personal-process/blob/master/Assignment/json/personalprocess-f7ab9-export.json) <br />
-  [Spreadsheet](https://docs.google.com/spreadsheets/d/1pbWeGOl_ieH2gRsHkT0Jd85jrJZHoArJeRI42KvMGJU/edit#gid=27001670)
+  [Spreadsheet](https://drive.google.com/file/d/12ve1G5zJaeSgzFJIhT46My4IFnTbsdAo/view?usp=sharing)
